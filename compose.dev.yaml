@@ -1,0 +1,12 @@
+services:
+  jupyter:
+    image: tyamadabiodataeng/pharmaomicspy-dev
+    platform: linux/amd64
+    build: 
+      context: .
+      dockerfile: ./dockerfiles/Dockerfile.dev
+    command: jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''
+    ports:
+     - "8888:8888"
+    volumes:
+     - .:/usr/src/

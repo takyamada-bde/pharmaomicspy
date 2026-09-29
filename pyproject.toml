@@ -1,3 +1,40 @@
+[project]
+name = "pharmaomicspy"
+version = "0.1.0"
+description = "A python library for a simplified and streamlined pharmaco-omics workflow."
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "matplotlib",
+    "seaborn",
+    "fastcluster",
+    "openpyxl",
+    "requests",
+    "pandas[performance, plot, computation, excel, hdf5]",
+    "polars-lts-cpu",
+    "ibis-framework[pandas, polars]",
+    "scikit-learn",
+    "rdkit",
+    "biopython",
+    "anndata",
+    "scanpy[leiden]",
+]
+
+[dependency-groups]
+dev = [
+    "black",
+    "ruff",
+    "mypy",
+    "tox",
+    "zensical",
+    "pytest",
+    "jupyterlab",
+    "line_profiler",
+    "memory_profiler",
+]
+
 [tool.tox]
 legacy_tox_ini = """
     [tox]
@@ -20,12 +57,6 @@ legacy_tox_ini = """
     commands = mypy .
 """
 
-[tool.pytest.ini_options]
-python_files = ["test_*.py"]
-testpaths = ["tests"]
-pythonpath = ['src', 'tests']
-norecursedirs = '.venv'
-
 [tool.ruff]
 lint.ignore = ['E501']
 lint.select = [
@@ -39,3 +70,9 @@ src = ['.']
 
 [tool.ruff.format]
 quote-style = 'single'
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+pythonpath = ['src', 'tests']
+norecursedirs = '.venv'
