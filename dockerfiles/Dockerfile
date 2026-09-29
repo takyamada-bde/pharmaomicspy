@@ -15,9 +15,7 @@ COPY pyproject.toml uv.lock ./
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --no-install-project --no-dev --no-cache --compile-bytecode
 
-COPY . .
-
-RUN chown -R appuser:appgroup /usr/src
+COPY --chown=appuser:appgroup . .
 
 USER appuser
 

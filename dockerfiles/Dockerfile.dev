@@ -15,10 +15,10 @@ COPY pyproject.toml uv.loc[k] ./
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --no-install-project
 
-COPY . .
-
-RUN chown -R appuser:appgroup /usr/src
+COPY --chown=appuser:appgroup . .
 
 USER appuser
+
+EXPOSE 8888
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
