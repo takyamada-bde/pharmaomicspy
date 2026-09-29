@@ -7,7 +7,6 @@ WORKDIR /usr/src
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    VIRTUAL_ENV=/opt/.venv \
     UV_PROJECT_ENVIRONMENT=/opt/.venv \
     PATH="/opt/.venv/bin:$PATH"
 
