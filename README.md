@@ -1,3 +1,3 @@
 # Pharmaomicspy
 
-A Python Library for a Simplified and Streamlined Pharmaco-omics Workflow
+A python library for a simplified and streamlined pharmaco-omics workflow.
