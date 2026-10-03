@@ -13,7 +13,7 @@ ENV PYTHONUNBUFFERED=1 \
 COPY pyproject.toml uv.lock ./
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --no-install-project --no-dev --no-cache --compile-bytecode
+    uv sync --frozen --no-install-project --no-dev --no-cache --compile-bytecode
 
 COPY --chown=appuser:appgroup . .
 
