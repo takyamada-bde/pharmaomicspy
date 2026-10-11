@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 RUN groupadd -r appgroup && useradd -r -m -d /home/appuser -g appgroup appuser
 
-WORKDIR /usr/src
+WORKDIR /app
 
 COPY pyproject.toml uv.lock ./
 
